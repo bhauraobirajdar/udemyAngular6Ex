@@ -1,0 +1,16 @@
+
+<!-- <input type="text" (input)="onTypeText($event)"> -->
+
+<input type="text" [(ngModel)]="typedVal">
+<p>{{ typedVal }}</p>
+
+<button class="btn btn-primary" 
+  [disabled]="disabledServer" 
+  (click)="onServerCreate()">Add Server</button>
+
+<p>{{ createServerStatus }}</p>
+<p>
+  Server ID is {{ serverId }} && Server Status is {{ getStatus() }}
+</p>
+<app-server></app-server>
+<app-server></app-server>
