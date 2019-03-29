@@ -8,9 +8,16 @@
   [disabled]="disabledServer" 
   (click)="onServerCreate()">Add Server</button>
 
-<p>{{ createServerStatus }}</p>
+<!-- <p>{{ createServerStatus }}</p> -->
+
+<p *ngIf="status; else noServer">Server is created & server name is server name is {{ typedVal }}</p>
+
+<ng-template #noServer>
+  <p>
+    No Server created
+  </p>
+</ng-template>
 <p>
   Server ID is {{ serverId }} && Server Status is {{ getStatus() }}
 </p>
-<app-server></app-server>
-<app-server></app-server>
+<app-server *ngFor="let server of servers"></app-server>
