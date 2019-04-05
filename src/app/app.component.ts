@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angularApp';
+  selectedFeatue : string = 'recipe';
+  changeFeatureName(featureName){
+    this.selectedFeatue = featureName;
+  }
 }
