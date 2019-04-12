@@ -2,6 +2,8 @@ import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 
 import { recipe } from './recipe.model';
 
+import { RecipeServie } from '../recipes.service'
+
 
 @Component({
   selector: 'app-recipe-list',
@@ -23,7 +25,7 @@ export class RecipeListComponent implements OnInit {
   selectedRecipe(recipeData : recipe){
     console.log("selectedRecipeEmit called");
     console.log(recipeData);
-  
+    
     this.selectedRecipeEmit.emit(recipeData)
   }
 
